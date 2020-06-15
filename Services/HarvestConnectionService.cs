@@ -20,13 +20,12 @@ namespace CAHarvestHelper.Services
             TestConnection___();
         }
 
-        public List<Dictionary<string, string>> RunHSQL(string command)
+        public IEnumerable<Dictionary<string, string>> RunHSQL(string command)
         {
             bool headelLine = true;
             List<string> header = new List<string>();
             int idx;
             Dictionary<string, string> dic;
-            List<Dictionary<string, string>> ret = new List<Dictionary<string, string>>();
 
             var queryResult = RunHSQL___(command);
 
@@ -38,7 +37,7 @@ namespace CAHarvestHelper.Services
                     headelLine = false;
                     continue;
                 }
-
+            
                 idx = 0;
                 dic = new Dictionary<string, string>();
                 foreach (var columnValue in line.Split("\t"))
@@ -46,10 +45,8 @@ namespace CAHarvestHelper.Services
                     dic.Add(header[idx], columnValue);
                     idx += 1;
                 }
-                ret.Add(dic);
+                yield return dic;
             }
-
-            return ret;
         }
 
 

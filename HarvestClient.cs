@@ -45,6 +45,11 @@ namespace CAHarvestHelper
             LoadFileVersions___(file);
         }
 
+        public IEnumerable<Dictionary<string, string>> RunHSQL(string command)
+        {
+            return CONNECTION.RunHSQL(command);
+        }
+
         private HarvestEnvironment LoadEnvironmentDetails___(HarvestEnvironment env,  int? startItemId = null, int? toLevel = 10)
         {
             if (environments.Contains(env))
