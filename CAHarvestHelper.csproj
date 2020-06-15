@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Tomasz Grzmilas</Authors>
+    <Description>Wrap for CA Harvest SCM Commands</Description>
+    <PackageProjectUrl>https://github.com/TomaszGrzmilas/CAHarvestHelper</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/TomaszGrzmilas/CAHarvestHelper</RepositoryUrl>
+    <PackageTags>CA Harvest Workbench Wrapper CA Harvest SCM Commands</PackageTags>
+    <PackageReleaseNotes>This is the initial release</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
